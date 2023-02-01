@@ -1,0 +1,29 @@
+<% layout('layout/boilerplate.ejs') %>
+    <h1>ALL Product</h1>
+    <div><a href="/Campground/new">Add Campground</a></div>
+    <% for(let Camp of Campground) {%>
+        <div class="card" mb-3>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" alt="" src="<%=Camp.image%> ">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%=Camp.title%>
+                        </h5>
+                        <p class="card-text">
+                            <%=Camp.description%>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%=Camp.location%>
+                            </small>
+                        </p>
+                        <a class="btn btn-primary" href="/Campground/<%=Camp._id%> ">View <%=Camp.title%> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% } %>
